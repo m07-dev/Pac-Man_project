@@ -19,13 +19,27 @@ public class PacMan {
 
     }
 
+    public static void afficheligne(char[][] plateau) {
+        System.out.print("*");
+        for (int i = 0; i <= 1; i++) {
+            for (int j = 0; j < plateau.length; j++) {
+                System.out.print("-");
+            }
+        }
+        System.out.println("*");
+    }
+
     public static void afficheplateau(char[][] plateau) {
+        afficheligne(plateau);
         for (int i = 0; i < plateau.length; i++) {
+            System.out.print("|");
             for (int j = 0; j < plateau[i].length; j++) {
                 System.out.print(plateau[i][j] + " ");
             }
+            System.out.print("|");
             System.out.println("");
         }
+        afficheligne(plateau);
     }
 
     public static void main(String[] args) {
@@ -80,7 +94,7 @@ public class PacMan {
             positionY = newY;
             plateau[positionX][positionY] = 'p';
 
-            // Affichez le plateau
+            // Affichez le plateau2
             afficheplateau(plateau);
         }
 
